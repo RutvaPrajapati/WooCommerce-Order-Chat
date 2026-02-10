@@ -1,0 +1,9 @@
+#wcoc_admin_messages { max-height:300px; overflow-y:auto; padding:10px; background:#fafafa; }
+.wcoc-message { margin-bottom:10px; }
+.wcoc-admin { text-align:right; }
+.wcoc-user { text-align:left; }
+.wcoc-bubble { display:inline-block; padding:8px 12px; border-radius:15px; max-width:70%; font-size:14px; }
+.wcoc-admin .wcoc-bubble { background:#0073aa; color:#fff; }
+.wcoc-user .wcoc-bubble { background:#e5e5e5; color:#333; }
+.wcoc-time { font-size:11px; color:#888; margin-top:2px; }
+.wcoc-unread-badge { display: inline-block; margin-left: 6px; background: #36b7d6; color: #fff; padding: 2px 7px; border-radius: 12px; font-size: 12px; font-weight: 600; line-height: 1; vertical-align: middle; }

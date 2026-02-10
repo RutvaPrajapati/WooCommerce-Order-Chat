@@ -1,0 +1,64 @@
+/* Chat wrapper */
+#wcoc-box {
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #c1c1c1;
+}
+
+/* Title */
+#wcoc-box .wcoc-title { text-align:center; margin:6px 0 12px; font-size:18px; }
+
+/* Messages area */
+#wcoc-messages {
+    background:#f6f7f8;
+    border-radius:10px;
+    padding:12px;
+    height:360px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* Message wrapper */
+.wcoc-message { max-width:75%; display:flex; flex-direction:column; }
+
+/* Admin (left) */
+.wcoc-admin { align-self:flex-start; }
+.wcoc-admin .wcoc-bubble {
+    background:#eeeeee;
+    color:#222;
+    border-radius:14px 14px 14px 4px;
+    padding:10px 14px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+/* User/Customer (right) */
+.wcoc-user { align-self:flex-end; }
+.wcoc-user .wcoc-bubble {
+    background:#0073aa;
+    color:#fff;
+    border-radius:14px 14px 4px 14px;
+    padding:10px 14px;
+}
+
+/* Bubble common */
+.wcoc-bubble { font-size:14px; line-height:1.3; word-wrap:break-word; }
+
+/* Timestamp / meta */
+.wcoc-meta { font-size:11px; opacity:0.7; margin-top:6px; text-align:right; }
+
+/* Input area */
+.wcoc-input-area { display:flex; gap:10px; margin-top:12px; }
+#wcoc-text { flex:1; min-height:56px; padding:10px; border-radius:8px; border:1px solid #ddd; resize:vertical; }
+#wcoc-send { white-space:nowrap; min-width:100px; }
+
+/* Responsive */
+@media (max-width:480px) {
+    #wcoc-box { padding:10px; }
+    .wco c-message { max-width:85%; }
+    #wcoc-messages { height:300px; }
+}
