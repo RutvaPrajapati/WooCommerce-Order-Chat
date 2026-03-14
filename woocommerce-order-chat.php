@@ -19,11 +19,16 @@ add_action( 'before_woocommerce_init', function() {
     }
 });
 
-// Include required files
-require_once WCOC_PATH . 'includes/class-wcoc-db.php';
-require_once WCOC_PATH . 'includes/wcoc-ajax.php';
-require_once WCOC_PATH . 'includes/wcoc-frontend.php';
-require_once WCOC_PATH . 'includes/wcoc-admin.php';
+/**
+ * Load plugin files
+ */
+function wcoc_load_plugin() {
+    require_once WCOC_PATH . 'includes/class-wcoc-db.php';
+    require_once WCOC_PATH . 'includes/wcoc-admin.php';
+    require_once WCOC_PATH . 'includes/wcoc-ajax.php';
+    require_once WCOC_PATH . 'includes/wcoc-frontend.php';
+}
+add_action( 'plugins_loaded', 'wcoc_load_plugin' );
 
 // Create Table
 register_activation_hook( __FILE__, ['WCOC_DB', 'create_table'] );
