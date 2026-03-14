@@ -13,8 +13,8 @@ function wcoc_send_message() {
         wp_send_json_error( [ 'msg' => 'Invalid input' ] );
     }
 
-    $order_id = absint( $_POST['order_id'] );
-    $message  = wp_kses_post( wp_unslash( $_POST['message'] ) );
+    $order_id = intval( $_POST['order_id'] );
+    $message  = sanitize_textarea_field($_POST['message']);
 
     $order = wc_get_order( $order_id );
     if ( ! $order ) {
