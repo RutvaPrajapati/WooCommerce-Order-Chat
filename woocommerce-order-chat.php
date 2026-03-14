@@ -4,6 +4,7 @@
  * Description: Adds real-time chat between customer and admin inside WooCommerce orders.
  * Version: 1.0.0
  * Author: Rutva Prajapati
+ * Author URI: https://rutva-prajapati.framer.website/
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
