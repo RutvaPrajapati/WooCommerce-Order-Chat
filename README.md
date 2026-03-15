@@ -1,69 +1,52 @@
-# WooCommerce-Order-Chat
+WooCommerce Order Chat is a lightweight, robust communication tool that allows real-time messaging between customers and store administrators directly within WooCommerce orders. It eliminates the need for external support tickets by keeping order-related discussions inside the WordPress dashboard.
 
-## Introduction
+🚀 Key Features
+For Store Administrators
+Order List Badges: Integrated notification badges appear in the WooCommerce Orders list to highlight orders with unread customer messages.
 
-WooCommerce-Order-Chat is a powerful WordPress plugin that enables real-time chat functionality between customers and shop managers for individual WooCommerce orders. By integrating seamlessly with WooCommerce, this plugin enhances customer service and post-purchase engagement, letting users discuss order-specific issues or requests directly within their account dashboard and the WordPress admin.
+Dedicated Chat Meta Box: A clean chat interface is added to the Order Edit screen, allowing admins to reply to customers instantly.
 
-## Features
+Permission-Based Access: Uses WordPress capability checks (manage_woocommerce) to ensure only authorized staff can access the admin chat features.
 
-- Real-time chat for each WooCommerce order between customers and administrators.
-- Chat threads linked to specific orders for easy reference and history tracking.
-- AJAX-powered message sending for a seamless user experience.
-- Message notifications for both customers and admins when new messages arrive.
-- Clean and user-friendly interface integrated into both the WooCommerce My Account section and the admin order details page.
-- Support for attachments (if enabled).
-- Extensible codebase for customization and integration with additional workflows.
+For Customers
+My Account Integration: A modern chat box is automatically embedded into the "View Order" page.
 
-## Usage
+Unread Indicators: Status updates appear in the "My Orders" table, showing the count of unread messages from the admin.
 
-After activating the plugin, customers will see a new "Order Chat" option in their WooCommerce My Account order view. Administrators get a chat panel inside each order’s details page in the WordPress dashboard. Both parties can send and receive messages about the order, ensuring quick resolution of queries, clarifications, and support needs.
+Mobile Responsive: The chat interface is fully responsive, ensuring a smooth experience on mobile devices.
 
-Typical usage flow:
+Technical & Core Features
+HPOS Compatible: Fully supports WooCommerce High-Performance Order Storage (HPOS) for modern, fast database performance.
 
-1. Customer places an order in WooCommerce.
-2. Customer opens their order details and starts a chat regarding their order.
-3. Admin receives a notification and responds from the order edit page.
-4. All communication is threaded and visible to both parties, streamlining support.
+Custom DB Architecture: Uses a dedicated database table (wp_wc_order_chat) for messages to keep the standard WordPress tables lean and fast.
 
-### User Journey Example
+Real-time Feel: Implements AJAX polling to fetch new messages automatically every 5 seconds.
 
-```mermaid
-journey
-    title Order Chat User Flow
-    section Customer
-      Views Order: 5: Customer
-      Sends Message: 4: Customer
-      Receives Admin Reply: 4: Customer
-    section Admin
-      Receives Notification: 3: Admin
-      Responds in Order: 5: Admin
-      Resolves Query: 5: Admin
-```
+Email Notifications: Sends automated HTML email alerts to both admins and customers when new messages are received.
 
-## Installation
+🛠 Installation
+Upload the woocommerce-order-chat folder to your /wp-content/plugins/ directory.
 
-To install WooCommerce-Order-Chat:
+Activate the plugin through the 'Plugins' menu in WordPress.
 
-1. Download or clone the repository to your local machine:
-    ```bash
-    git clone https://github.com/RutvaAWT/WooCommerce-Order-Chat.git
-    ```
-2. Copy or upload the plugin folder to your WordPress installation’s `wp-content/plugins/` directory.
-3. Log in to your WordPress admin dashboard.
-4. Go to **Plugins** > **Installed Plugins** and activate "WooCommerce Order Chat".
-5. Ensure WooCommerce is activated, as the chat plugin depends on it.
-6. Configure any plugin settings as required (if available).
+The plugin will automatically create the necessary database tables upon activation.
 
-## Requirements
+📂 File Structure
+includes/class-wcoc-db.php - Database schema and CRUD operations.
 
-- WordPress 5.0 or later.
-- WooCommerce 4.0 or later.
-- PHP 7.2 or higher.
-- jQuery (typically included with WordPress themes).
-- Proper file permissions for uploading attachments (if attachment support is enabled).
+includes/wcoc-admin.php - Backend UI, meta boxes, and order list integration.
 
----
+includes/wcoc-ajax.php - Core logic for sending/receiving messages and email triggers.
 
-For further customization, refer to the plugin's hooks and filters in the codebase. If you encounter issues, please open an issue on the GitHub repository with detailed steps to reproduce.
+includes/wcoc-frontend.php - Customer-facing chat box and My Account hooks.
 
-Happy chatting!
+assets/ - Contains all CSS and JS for the admin and frontend interfaces.
+
+🔒 Security
+Nonce Verification: All AJAX requests are protected with WordPress nonces to prevent CSRF attacks.
+
+Data Sanitization: All user input is sanitized using sanitize_textarea_field before being saved to the database.
+
+Ownership Checks: Customers can only view and send messages for orders they personally placed.
+
+Version: 1.0.0
