@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WooCommerce Order Chat
+ * Plugin Name: WooCommerce Admin Customer Chat
  * Description: Adds real-time chat between customer and admin inside WooCommerce orders.
  * Version: 1.0.0
  * Author: Rutva Prajapati
