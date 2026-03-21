@@ -1,4 +1,4 @@
-**WooCommerce Order Chat** is a lightweight, robust communication tool that allows real-time messaging between customers and store administrators directly within WooCommerce orders. It eliminates the need for external support tickets by keeping order-related discussions inside the WordPress dashboard.
+**WooCommerce Admin Customer Chat** is a lightweight, robust communication tool that allows real-time messaging between customers and store administrators directly within WooCommerce orders. It eliminates the need for external support tickets by keeping order-related discussions inside the WordPress dashboard.
 
 **Key Features**
 1. For Store Administrators
